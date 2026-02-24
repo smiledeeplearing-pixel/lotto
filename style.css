@@ -1,49 +1,106 @@
+:root {
+    --bg-color: #f0f0f0;
+    --container-bg: #fff;
+    --text-color: #333;
+    --number-bg: #fff;
+    --number-border: #ccc;
+    --button-bg: #4CAF50;
+    --button-hover: #45a049;
+    --toggle-bg: #444;
+    --toggle-text: #fff;
+}
+
+[data-theme='dark'] {
+    --bg-color: #1a1a1a;
+    --container-bg: #2d2d2d;
+    --text-color: #f0f0f0;
+    --number-bg: #444;
+    --number-border: #555;
+    --button-bg: #2196F3;
+    --button-hover: #1e88e5;
+    --toggle-bg: #ddd;
+    --toggle-text: #1a1a1a;
+}
+
 body {
-    font-family: sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
     text-align: center;
+    background-color: var(--container-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+    width: 90%;
+    max-width: 500px;
+}
+
+.theme-toggle {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+#toggle-theme {
+    background-color: var(--toggle-bg);
+    color: var(--toggle-text);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
 h1 {
-    color: #333;
+    margin-bottom: 2rem;
 }
 
 .numbers {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
+    gap: 10px;
 }
 
 .number {
     display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
     border-radius: 50%;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    margin: 0 5px;
-    font-size: 24px;
+    background-color: var(--number-bg);
+    border: 2px solid var(--number-border);
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 #generate {
-    background-color: #4CAF50;
+    background-color: var(--button-bg);
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 #generate:hover {
-    background-color: #45a049;
+    background-color: var(--button-hover);
+}
+
+#generate:active {
+    transform: scale(0.98);
 }
