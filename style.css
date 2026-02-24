@@ -1,29 +1,27 @@
 :root {
-    --bg-color: #f0f0f0;
-    --container-bg: #fff;
-    --text-color: #333;
-    --number-bg: #fff;
-    --number-border: #ccc;
-    --button-bg: #4CAF50;
-    --button-hover: #45a049;
-    --toggle-bg: #444;
-    --toggle-text: #fff;
+    --bg-color: #f8f9fa;
+    --container-bg: #ffffff;
+    --text-color: #212529;
+    --number-border: #e9ecef;
+    --button-bg: #007bff;
+    --button-hover: #0056b3;
+    --toggle-bg: #343a40;
+    --toggle-text: #ffffff;
 }
 
 [data-theme='dark'] {
-    --bg-color: #1a1a1a;
-    --container-bg: #2d2d2d;
-    --text-color: #f0f0f0;
-    --number-bg: #444;
-    --number-border: #555;
-    --button-bg: #2196F3;
-    --button-hover: #1e88e5;
-    --toggle-bg: #ddd;
-    --toggle-text: #1a1a1a;
+    --bg-color: #121212;
+    --container-bg: #1e1e1e;
+    --text-color: #f8f9fa;
+    --number-border: #333333;
+    --button-bg: #3700b3;
+    --button-hover: #6200ee;
+    --toggle-bg: #f8f9fa;
+    --toggle-text: #121212;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     display: flex;
@@ -37,70 +35,84 @@ body {
 .container {
     text-align: center;
     background-color: var(--container-bg);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     transition: background-color 0.3s ease;
     width: 90%;
-    max-width: 500px;
+    max-width: 550px;
 }
 
 .theme-toggle {
     text-align: right;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 #toggle-theme {
     background-color: var(--toggle-bg);
     color: var(--toggle-text);
     border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 8px 18px;
+    border-radius: 25px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 600;
     transition: all 0.3s ease;
 }
 
 h1 {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 800;
 }
 
 .numbers {
     display: flex;
     justify-content: center;
-    margin-bottom: 1.5rem;
-    gap: 10px;
+    margin-bottom: 1.2rem;
+    gap: 8px;
 }
 
 .number {
-    display: inline-block;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-    background-color: var(--number-bg);
-    border: 2px solid var(--number-border);
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
+
+/* Lotto Color Palette */
+.bg-yellow { background-color: #fbc400; } /* 1-10 */
+.bg-blue   { background-color: #69c8f2; } /* 11-20 */
+.bg-red    { background-color: #ff7272; } /* 21-30 */
+.bg-gray   { background-color: #aaaaaa; } /* 31-40 */
+.bg-green  { background-color: #b0d840; } /* 41-45 */
 
 #generate {
     background-color: var(--button-bg);
     color: white;
-    padding: 12px 24px;
+    padding: 14px 32px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 1.1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.1s ease;
+    font-weight: 700;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
 }
 
 #generate:hover {
     background-color: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 #generate:active {
-    transform: scale(0.98);
+    transform: translateY(0);
 }

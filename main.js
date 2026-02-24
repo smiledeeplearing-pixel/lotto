@@ -15,7 +15,15 @@ toggleBtn.addEventListener('click', () => {
 });
 
 function updateToggleText(theme) {
-    toggleBtn.textContent = theme === 'light' ? 'Dark Mode' : 'Light Mode';
+    toggleBtn.textContent = theme === 'light' ? '다크 모드' : '라이트 모드';
+}
+
+function getNumberColorClass(num) {
+    if (num <= 10) return 'bg-yellow';
+    if (num <= 20) return 'bg-blue';
+    if (num <= 30) return 'bg-red';
+    if (num <= 40) return 'bg-gray';
+    return 'bg-green';
 }
 
 function generateLottoNumbers() {
@@ -37,7 +45,7 @@ generateBtn.addEventListener('click', () => {
         row.className = 'numbers';
         numbers.forEach(num => {
             const span = document.createElement('span');
-            span.className = 'number';
+            span.className = `number ${getNumberColorClass(num)}`;
             span.textContent = num;
             row.appendChild(span);
         });
