@@ -7,6 +7,9 @@
     --button-hover: #0056b3;
     --toggle-bg: #343a40;
     --toggle-text: #ffffff;
+    --input-bg: #ffffff;
+    --input-border: #ced4da;
+    --hr-color: #e9ecef;
 }
 
 [data-theme='dark'] {
@@ -18,6 +21,9 @@
     --button-hover: #6200ee;
     --toggle-bg: #f8f9fa;
     --toggle-text: #121212;
+    --input-bg: #2d2d2d;
+    --input-border: #444444;
+    --hr-color: #333333;
 }
 
 body {
@@ -30,6 +36,7 @@ body {
     min-height: 100vh;
     margin: 0;
     transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 20px;
 }
 
 .container {
@@ -39,7 +46,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     transition: background-color 0.3s ease;
-    width: 90%;
+    width: 100%;
     max-width: 550px;
 }
 
@@ -88,11 +95,11 @@ h1 {
 }
 
 /* Lotto Color Palette */
-.bg-yellow { background-color: #fbc400; } /* 1-10 */
-.bg-blue   { background-color: #69c8f2; } /* 11-20 */
-.bg-red    { background-color: #ff7272; } /* 21-30 */
-.bg-gray   { background-color: #aaaaaa; } /* 31-40 */
-.bg-green  { background-color: #b0d840; } /* 41-45 */
+.bg-yellow { background-color: #fbc400; }
+.bg-blue   { background-color: #69c8f2; }
+.bg-red    { background-color: #ff7272; }
+.bg-gray   { background-color: #aaaaaa; }
+.bg-green  { background-color: #b0d840; }
 
 #generate {
     background-color: var(--button-bg);
@@ -104,7 +111,9 @@ h1 {
     font-size: 1.1rem;
     font-weight: 700;
     margin-top: 1rem;
+    margin-bottom: 2rem;
     transition: all 0.3s ease;
+    width: 100%;
 }
 
 #generate:hover {
@@ -115,4 +124,64 @@ h1 {
 
 #generate:active {
     transform: translateY(0);
+}
+
+.inquiry-section {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--hr-color);
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--input-border);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--button-bg);
+}
+
+#submit-inquiry {
+    background-color: var(--toggle-bg);
+    color: var(--toggle-text);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    transition: opacity 0.3s ease;
+}
+
+#submit-inquiry:hover {
+    opacity: 0.9;
 }
