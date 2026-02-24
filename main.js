@@ -1,7 +1,7 @@
 const generateBtn = document.getElementById('generate');
-const numbersDiv = document.querySelectorAll('.number');
+const resultsDiv = document.getElementById('results');
 
-generateBtn.addEventListener('click', () => {
+function generateLottoNumbers() {
     const numbers = [];
     while (numbers.length < 6) {
         const randomNumber = Math.floor(Math.random() * 45) + 1;
@@ -9,10 +9,21 @@ generateBtn.addEventListener('click', () => {
             numbers.push(randomNumber);
         }
     }
+    return numbers.sort((a, b) => a - b);
+}
 
-    numbers.sort((a, b) => a - b);
-
-    numbersDiv.forEach((numberDiv, index) => {
-        numberDiv.textContent = numbers[index];
-    });
+generateBtn.addEventListener('click', () => {
+    resultsDiv.innerHTML = '';
+    for (let i = 0; i < 5; i++) {
+        const numbers = generateLottoNumbers();
+        const row = document.createElement('div');
+        row.className = 'numbers';
+        numbers.forEach(num => {
+            const span = document.createElement('span');
+            span.className = 'number';
+            span.textContent = num;
+            row.appendChild(span);
+        });
+        resultsDiv.appendChild(row);
+    }
 });
